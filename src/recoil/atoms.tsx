@@ -1,6 +1,7 @@
-import { atom } from "recoil";
+import { atomFamily } from "recoil";
+import { Account } from "./constants";
 
-export const numberCountAtom = atom({
-  key: "numberCount_ATOM",
-  default: 0,
+export const registeredAccountAtom = atomFamily<Account | undefined, string>({
+  key: "registeredAccounts_ATOM",
+  default: undefined,
 });

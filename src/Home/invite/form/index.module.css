@@ -1,0 +1,21 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-regular);
+}
+.form > * {
+  width: 100%;
+}
+.input {
+  border: var(--border);
+  padding: var(--spacing-regular);
+  box-sizing: border-box;
+}
+.input:focus {
+  outline: none;
+}
+.inputError {
+  border-color: var(--error-color);
+}

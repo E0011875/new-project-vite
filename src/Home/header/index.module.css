@@ -1,0 +1,6 @@
+.header {
+  background-color: var(--secondary-color);
+  padding: var(--spacing-regular);
+  font-size: var(--font-size-extra-large);
+  color: var(--primary-color);
+}

@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #f1f1f1; /* Primary color */
+  --secondary-color: #78c257; /* Secondary color */
+  --tertiary-color: #616161; /* Tertiary color */
+  --error-color: #cc0000;
+
+  --font-size-small: 14px; /* Small font size */
+  --font-size-regular: 16px; /* Regular font size */
+  --font-size-large: 20px; /* Large font size */
+  --font-size-extra-large: 24px; /* Larger font size */
+  --font-size-banner: 48px;
+
+  --spacing-small: 8px; /* Small spacing */
+  --spacing-regular: 14px; /* Regular spacing */
+  --spacing-large: 24px; /* Large spacing */
+
+  --border: 1px solid #000;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ensure body and html take full height */
+  font-family: "Poppins", sans-serif; /* Font family */
+}

@@ -1,10 +1,23 @@
-import { selector } from "recoil";
-import { numberCountAtom } from "./atoms";
+import { DefaultValue, selectorFamily } from "recoil";
+import { registeredAccountAtom } from "./atoms";
+import { Account } from "./constants";
 
-export const numberCountSelector = selector<number>({
+export const registeredAccountSelector = selectorFamily<
+  Account | undefined,
+  string
+>({
   key: "numberCountSelector",
-  get: ({ get }) => get(numberCountAtom),
-  set: ({ set }, updatedCount) => {
-    set(numberCountAtom, updatedCount);
-  },
+  get:
+    (email: string) =>
+    ({ get }) =>
+      get(registeredAccountAtom(email)),
+  set:
+    (email: string) =>
+    ({ set, reset }, accountDetails) => {
+      if (accountDetails instanceof DefaultValue) {
+        reset(registeredAccountAtom(email));
+      } else {
+        set(registeredAccountAtom(email), accountDetails);
+      }
+    },
 });

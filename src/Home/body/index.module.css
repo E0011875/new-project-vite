@@ -1,0 +1,17 @@
+.body {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: var(--spacing-large);
+  grid-template-columns: max-content;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.title {
+  font-size: var(--font-size-banner);
+  font-weight: bold;
+}
+.description {
+  font-size: var(--font-size-large);
+  color: var(--tertiary-color);
+}
