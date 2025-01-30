@@ -4,14 +4,12 @@ export enum SUBMIT_STATUS {
   NONE = "none",
 }
 
-export const StatusDetails: {
-  [status in SUBMIT_STATUS]: {
+export const StatusDetails: Record<SUBMIT_STATUS, {
     title: string;
     message: string;
     additional: string;
     cta: string;
-  };
-} = {
+  }> = {
   [SUBMIT_STATUS.SUCCESS]: {
     title: "Requested",
     message:

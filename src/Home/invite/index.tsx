@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { createPortal } from "react-dom";
 import { AiOutlineClose as CloseIcon } from "react-icons/ai";
 import { DEFAULT_FIELD_VALUES, SUBMIT_STATUS } from "./constants";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Status from "./status";
 import Button from "./button";
 import { useRecoilState } from "recoil";
@@ -39,7 +39,7 @@ const Modal = ({ isOpen, onModalClose }: ModalProps) => {
   );
 
   const submitHandler = useCallback(
-    async (data: FieldValues) => {
+    async (data: DefaultFieldValues) => {
       const { fullName, email } = data;
       if (isValid) {
         try {

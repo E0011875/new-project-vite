@@ -13,8 +13,11 @@ export async function fetchPost<T, R>({
     body: JSON.stringify(payload),
   });
   if (!response.ok) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { errorMessage } = await response.json();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     throw new Error(errorMessage);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return response.json(); // status 200-299
 }
