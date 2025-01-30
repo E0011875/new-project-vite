@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Broccoli & Co
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Broccoli & Co., an upcoming online service company, would like to let people to "Request an invitation" on their website.
+![preview_1](public/preview_1.png)
+![preview_2](public/preview_2.png)
 
-Currently, two official plugins are available:
+**Functionality**
+Create a simple yet clean homepage for them that allow users to enter their name and email to receive email invitations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Visual Requirements**
 
-## Expanding the ESLint configuration
+- The UI should occupy the full height of the screen.
+- Shows a fixed header that is always on top of the window and a footer that is always on the bottom of the window (assuming a reasonable window height).
+- The page content is sandwiched in the middle, containing just a heading, a small piece of text and a button to request an invite.
+- A rough mockup of the basic layout is attached. While preserving this layout on desktop, you may style it however you wish, with or without images.
+- The solution must be mobile friendly (users won't need to pinch and zoom on their mobile devices).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Behaviour**
 
-- Configure the top-level `parserOptions` property like this:
+- When the Request Invite button is clicked, a popup shows containing the _Full name_, _Email_ and _Confirm Email_ nput fields.
+- The user needs to fill in all three fields to request an invite. _Full name_ needs to be at least 3 characters long. _Email_ needs to be in validation email format and _Confirm Email_ needs to match Email. (You may display the validation errors inline)
+- If the user clicks **Send** and one or more fields do not validate properly, the app <u>should not contact</u> the backend but instead provide appropriate feedback to the user (use your judgement on what this UX should be).
+- If the user clicks **Send** and all fields validate properly, the app should send the request to the backend server (see specs below) and inform the user that the request is being sent.
+  - (i) If the server returns 200 OK, it should switch to another popup, indicating that everything went through OK. This popup can be dismissed
+    and will simply close - revealing the homepage again.
+  - (ii) The server may return 400 Bad Request, in which case the app should simply display the error message from the server.
+- The Send button can be clicked again to re-attempt the submission.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Open the project in a editor and navigate to the project root directory
+2. Run `npm install` to install node modules
+3. Run `npm run dev` to preview application on http://localhost:5173/
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Dependencies
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+| Name             | Version |
+| ---------------- | ------- |
+| classnames       | ^2.5.1  |
+| eslint           | ^9.19.0 |
+| node             | ^18.0.0 |
+| react            | ^18.3.1 |
+| react-icons      | ^5.4.0  |
+| react-hook-forms | ^7.54.2 |
+| recoil           | ^0.7.7  |
+| typeScript       | ~5.6.2  |
+| vite             | ^6.0.5  |
