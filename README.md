@@ -1,6 +1,6 @@
 # Broccoli & Co
 
-> **\*Broccoli & Co.**, an upcoming online service company, would like to let people to "Request an invitation" on their website.\*
+> ***Broccoli & Co.**, an upcoming online service company, would like to let people to "Request an invitation" on their website.*
 
 ![preview_1](public/preview_1.png)
 ![preview_2](public/preview_2.png)
