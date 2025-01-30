@@ -21,7 +21,7 @@
   font-size: var(--font-size-regular);
   text-align: center;
 }
-.serverMessage {
+.error {
   color: var(--error-color);
   font-size: var(--font-size-small);
   text-align: center;
