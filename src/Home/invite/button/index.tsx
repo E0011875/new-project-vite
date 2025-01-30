@@ -8,10 +8,10 @@ export interface ButtonProps
   isLoading?: boolean;
 }
 const Button = (props: ButtonProps) => {
-  const { label, disabled, isLoading } = props;
+  const { label, disabled, isLoading, ...buttonProps } = props;
   return (
     <button
-      {...props}
+      {...buttonProps}
       disabled={disabled || isLoading}
       className={classNames(styles.button, {
         [styles.buttonDisabled]: disabled || isLoading,
