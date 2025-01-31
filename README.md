@@ -1,6 +1,6 @@
 # Broccoli & Co
 
-> ***Broccoli & Co.**, an upcoming online service company, would like to let people to "Request an invitation" on their website.*
+> **\*Broccoli & Co.**, an upcoming online service company, would like to let people to "Request an invitation" on their website.\*
 
 ![preview_1](public/preview_1.png)
 ![preview_2](public/preview_2.png)
@@ -36,7 +36,7 @@ Create a simple yet clean homepage for them that allow users to enter their name
 
 ## Testing
 
-Test cases are written with React Tesing Library (RTL) and Jest to render components and simulate user interactions with the DOM. To run all ests for this project, run `npm test` to trigger Jest in watch mode by default. To run tests for a specific file, include the relative path after the command `npm test <relative path>`. Should a change be detected in the soruce of test files, Jest will automatically re-run the tests and provide real-time feedback.
+Test cases are written with React Tesing Library (RTL) and Jest to render components and simulate user interactions with the DOM. To run tests for a specific file, run `npm test <relative path>` to trigger Jest in watch mode by default. To run all tests for this project, run `npm run test:all`. Should a change be detected in the soruce of test files, Jest will automatically re-run the tests and provide real-time feedback.
 
 ## Dependencies
 
