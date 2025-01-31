@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 interface StatusProps {
   status: SUBMIT_STATUS;
-  onConfirm: () => void;
+  onConfirm?: () => void;
   error?: string;
 }
 const Status = ({ status, onConfirm, error }: StatusProps) => {
@@ -14,6 +14,7 @@ const Status = ({ status, onConfirm, error }: StatusProps) => {
       style={{
         visibility: status === SUBMIT_STATUS.NONE ? "hidden" : "visible",
       }}
+      data-testid="status"
     >
       <div className={styles.title}>{StatusDetails[status].title}</div>
       <div className={styles.message}>

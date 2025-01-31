@@ -28,9 +28,10 @@ const Modal = ({ isOpen, onModalClose }: ModalProps) => {
     getValues,
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     clearErrors, // clear error on re-attempt
     reset,
+    trigger,
   } = useForm({ defaultValues: DEFAULT_FIELD_VALUES });
 
   const email = watch("email"); // reference against email confirmation
@@ -41,6 +42,7 @@ const Modal = ({ isOpen, onModalClose }: ModalProps) => {
   const submitHandler = useCallback(
     async (data: DefaultFieldValues) => {
       const { fullName, email } = data;
+      const isValid = await trigger();
       if (isValid) {
         try {
           setIsLoading(true);
@@ -60,7 +62,7 @@ const Modal = ({ isOpen, onModalClose }: ModalProps) => {
         }
       }
     },
-    [isValid, setAssociatedAcc]
+    [setAssociatedAcc, trigger]
   );
 
   const modalCloseHandler = useCallback(() => {
@@ -122,15 +124,25 @@ const Modal = ({ isOpen, onModalClose }: ModalProps) => {
   }, [modalCloseHandler, isOpen]);
 
   return (
-    <div style={{ visibility: isOpen ? "visible" : "hidden" }}>
+    <div
+      style={{ visibility: isOpen ? "visible" : "hidden" }}
+      data-testid="modal"
+    >
       <div className={styles.mask} onClick={modalCloseHandler} />
       <div
         className={styles.modal}
         style={{
           visibility: submitState === SUBMIT_STATUS.NONE ? "inherit" : "hidden",
         }}
+        data-testid="form"
       >
-        <CloseIcon onClick={modalCloseHandler} className={styles.close} />
+        <div
+          data-testid="close"
+          onClick={modalCloseHandler}
+          className={styles.close}
+        >
+          <CloseIcon />
+        </div>
         <div className={styles.title}>Request an invite</div>
         <div className={styles.divider} />
         <Form<DefaultFieldValues>
