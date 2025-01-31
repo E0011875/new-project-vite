@@ -16,8 +16,11 @@ const Button = (props: ButtonProps) => {
       className={classNames(styles.button, {
         [styles.buttonDisabled]: disabled || isLoading,
       })}
+      data-testid="button"
     >
-      {isLoading && <FaSpinner className={styles.spinner} />}
+      {isLoading && (
+        <FaSpinner className={styles.spinner} data-testid="button-spinner" />
+      )}
       <div className={styles.label}>{label}</div>
     </button>
   );

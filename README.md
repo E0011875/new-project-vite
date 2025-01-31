@@ -34,16 +34,23 @@ Create a simple yet clean homepage for them that allow users to enter their name
 2. Run `npm install` to install node modules
 3. Run `npm run dev` to preview application on http://localhost:5173/
 
+## Testing
+
+Test cases are written with React Tesing Library (RTL) and Jest to render components and simulate user interactions with the DOM. To run all ests for this project, run `npm test` to trigger Jest in watch mode by default. To run tests for a specific file, include the relative path after the command `npm test <relative path>`. Should a change be detected in the soruce of test files, Jest will automatically re-run the tests and provide real-time feedback.
+
 ## Dependencies
 
-| Name             | Version |
-| ---------------- | ------- |
-| classnames       | ^2.5.1  |
-| eslint           | ^9.19.0 |
-| node             | ^18.0.0 |
-| react            | ^18.3.1 |
-| react-icons      | ^5.4.0  |
-| react-hook-forms | ^7.54.2 |
-| recoil           | ^0.7.7  |
-| typeScript       | ~5.6.2  |
-| vite             | ^6.0.5  |
+| Name                   | Version |
+| ---------------------- | ------- |
+| @testing-library       | ^16.2.0 |
+| classnames             | ^2.5.1  |
+| eslint                 | ^9.19.0 |
+| jest                   | ^29.7.0 |
+| jest.environment-jsdom | ^29.7.0 |
+| node                   | ^18.0.0 |
+| react                  | ^18.3.1 |
+| react-icons            | ^5.4.0  |
+| react-hook-forms       | ^7.54.2 |
+| recoil                 | ^0.7.7  |
+| typeScript             | ~5.6.2  |
+| vite                   | ^6.0.5  |
